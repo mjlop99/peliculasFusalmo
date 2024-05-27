@@ -1,0 +1,73 @@
+.pelicula-container {
+    position: relative;
+    margin: 25px;
+    height: 300px;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.img-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container .img-fluid.extendida {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease; /* Transición más lenta */
+}
+
+.info {
+    padding: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo para .info */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+}
+
+.cortina {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.play-icon {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem; /* Tamaño del ícono */
+    color: white; /* Color del ícono */
+    display: none; /* Oculto por defecto */
+    align-items: center;
+    justify-content: center;
+}
+
+.pelicula-container:hover .img-fluid.extendida {
+    filter: blur(5px); /* Efecto de desenfoque al hacer hover */
+}
+
+.pelicula-container:hover .cortina {
+    background-color: rgba(0, 0, 0, 0.5); /* Cortina negra transparente al hacer hover */
+}
+
+.pelicula-container:hover .info {
+    opacity: 1; /* Mostrar la información al hacer hover */
+}
+
+.pelicula-container:hover .play-icon {
+    display: flex; /* Mostrar el ícono al hacer hover */
+}
