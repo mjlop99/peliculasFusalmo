@@ -1,0 +1,127 @@
+<div class="formularioPelicula">
+  <div class="input-container">
+    <div class="input">
+      <label for="peliculaId" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-4">
+        <input
+          type="text"
+          class="form-control"
+          id="peliculaId"
+          [(ngModel)]="id"
+          placeholder="id automatico"
+          readonly
+        />
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="urlPelicula" class="col-sm-2 col-form-label">URL</label>
+      <div class="col-sm-4">
+        <input
+          type="text"
+          class="form-control"
+          id="urlPelicula"
+          [(ngModel)]="urlImagen"
+          placeholder="URL de la Imagen"
+        />
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="urlPeliculalink" class="col-sm-2 col-form-label">video</label>
+      <div class="col-sm-4">
+        <input
+          type="text"
+          class="form-control"
+          id="urlPeliculalink"
+          [(ngModel)]="urlVideo"
+        />
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="peliculaTitulo" class="col-sm-2 col-form-label">Título</label>
+      <div class="col-sm-4">
+        <input
+          type="text"
+          class="form-control"
+          id="peliculaTitulo"
+          [(ngModel)]="titulo"
+        />
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="protas" class="col-sm-2 col-form-label">Protagonista</label>
+      <div class="col-sm-4">
+        <input
+          type="text"
+          class="form-control"
+          id="protas"
+          [(ngModel)]="protagonista"
+        />
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="peliculaDescripcion" class="col-sm-2 col-form-label"
+        >Descripción</label
+      >
+      <div class="col-sm-4">
+        <input
+          type="text"
+          class="form-control"
+          id="peliculaDescripcion"
+          [(ngModel)]="descripcion"
+        />
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="peliculaCategoria" class="col-sm-2 col-form-label"
+        >Categoría</label
+      >
+      <div class="col-sm-4">
+        <input
+          type="text"
+          class="form-control"
+          id="peliculaCategoria"
+          [(ngModel)]="categoria"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="link-youtube">
+    <a href="{{ urlVideo }}" target="_blank"><img src="{{ urlImagen }}" alt="" />
+    </a>
+    
+      <a href="{{ urlVideo }}" target="_blank"><i class="fas fa-play">
+      </i></a>
+  </div>
+</div>
+<div class="botones-container">
+  <button class="btn btn-primary" (click)="resetForm()">Limpiar</button>
+
+  <button
+    class="btn btn-primary"
+    (click)="agregarPelicula()"
+  >
+    Guardar
+  </button>
+  <button
+    class="btn btn-primary"
+    (click)="
+      modificarPelicula(
+        id,
+        urlVideo,
+        protagonista,
+        urlImagen,
+        titulo,
+        descripcion,
+        categoria
+      )
+    "
+  >
+    Actualizar
+  </button>
+
+  <button class="btn btn-primary" (click)="eliminarPeliculas(id)">
+    Eliminar
+  </button>
+
+  <button class="btn btn-primary" (click)="mostrarPeliculas()">Cancelar</button>
+</div>

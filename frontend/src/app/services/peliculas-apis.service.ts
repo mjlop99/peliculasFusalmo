@@ -20,5 +20,21 @@ export class PeliculasApisService {
         throw error;
       });
   }
-
+ 
+  deletePelicula(id: string) {
+    return fetch(`http://localhost:4000/api/peliculas/${id}`, {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al eliminar la película');
+      }
+      return response.json();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      throw error;
+    });
+  }
 }
+

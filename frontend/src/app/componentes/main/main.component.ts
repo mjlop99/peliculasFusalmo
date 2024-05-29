@@ -17,13 +17,16 @@ export class MainComponent implements OnInit {
     this.consultarPeliculas();
   }
 
-  consultarPeliculas() {
+  async consultarPeliculas():Promise<any> {
     this.peliculasService.getPeliculas().then(pelis => {
       this.peliculas = pelis;
+      console.log(pelis);
+      
     }).catch(error => {
       console.error('Error al obtener películas:', error);
     });
   }
+  
 
   agregarPelicula() {
     this.mostrarLista = false;
@@ -38,5 +41,8 @@ export class MainComponent implements OnInit {
   manejarCancelar() {
     this.mostrarLista = true;
     this.peliculaSeleccionada = null;
+  }
+  PeliculaCambios() {
+    this.consultarPeliculas(); 
   }
 }

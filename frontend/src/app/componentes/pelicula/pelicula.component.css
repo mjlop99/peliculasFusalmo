@@ -1,7 +1,7 @@
 .pelicula-container {
     position: relative;
     margin: 25px;
-    height: 300px;
+    height: 250px;
     max-width: 200px;
     overflow: hidden;
 }
@@ -14,7 +14,7 @@
 
 .img-container .img-fluid.extendida {
     width: 100%;
-    height: auto;
+    height: 100%;
     transition: filter 0.5s ease; /* Transición más lenta */
 }
 
@@ -39,7 +39,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
     transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
 }
@@ -49,9 +49,9 @@
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem; /* Tamaño del ícono */
-    color: white; /* Color del ícono */
-    display: none; /* Oculto por defecto */
+    font-size: 25px; 
+    color: white; 
+    display: none; 
     align-items: center;
     justify-content: center;
 }
